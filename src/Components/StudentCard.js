@@ -3,8 +3,11 @@ import { useNavigate } from "react-router-dom"
 export default function StudentCard({student,studentData,setData}){
   const navigate=useNavigate()
     const removeStudent=(id)=>{
+      let response=window.confirm("Are you sure you want to delete?")
+      if(response){
       const newStudentData=studentData.filter((stud)=>stud.id !==id)
       setData(newStudentData)
+      }
     }
     return (
         <div>
