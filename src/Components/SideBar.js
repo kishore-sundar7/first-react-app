@@ -1,20 +1,31 @@
+import { useNavigate } from "react-router-dom"
+
 export default function SideBar(){
+    const navigate = useNavigate()
     return(
     
            <div className="side-bar-styles p-7">
             <div>
               <ul className="actions">
                 <li className="rounded-full p-2 hover:bg-sky-700">
-                    <button>Dashboard</button>
+                    <button
+                    onClick={()=>navigate("/")}
+                    >Dashboard</button>
                 </li>
                 <li className="rounded-full p-2 hover:bg-sky-700">
-                    <button >Profile</button>
+                    <button
+                     onClick={()=>navigate("/profile")}
+                     >Profile</button>
                 </li>
                 <li className="rounded-full p-2 hover:bg-sky-700">
-                    <button>Student list</button>
+                    <button
+                      onClick={()=>navigate("/student/all")}
+                    >Student list</button>
                 </li>
                 <li className="rounded-full p-2 hover:bg-sky-700">
-                    <button>Interview notes</button>
+                    <button
+                      onClick={()=>navigate("/interview/notes")}
+                    >Interview notes</button>
                 </li>
                 </ul>
             </div>        
